@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>دموی انتخابگر تاریخ شمسی</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #f7f5fb;
+            color: #211b36;
+            font: 16px/1.7 Vazirmatn, sans-serif;
+        }
+        main {
+            max-width: 46rem;
+            margin: 2rem auto;
+            padding: clamp(1rem, 4vw, 2rem);
+            border: 1px solid #eae5f3;
+            border-radius: 1rem;
+            background: #fff;
+        }
+        h1 { margin: 0; font-size: clamp(1.35rem, 4vw, 1.8rem); }
+        p { margin: .4rem 0 1.25rem; color: #655e78; }
+        .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+        label { display: block; margin-bottom: .35rem; font-weight: 600; }
+        .date-controls { display: flex; gap: .5rem; }
+        input, #calendar-button {
+            box-sizing: border-box;
+            min-height: 2.75rem;
+            padding: .45rem .65rem;
+            border: 1px solid #cfc7df;
+            border-radius: .55rem;
+            font: inherit;
+        }
+        input { min-width: 0; width: 100%; color: inherit; }
+        input[readonly] { background: #f7f5fb; }
+        #calendar-button {
+            flex: none;
+            border-color: #5642bc;
+            background: #5642bc;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 50rem) { main { margin-inline: 1rem; } }
+        @media (max-width: 36rem) { .fields { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>دموی انتخابگر تاریخ شمسی</h1>
+        <p>یک روز از تقویم انتخاب کنید یا تاریخ شمسی را بنویسید تا معادل میلادی آن را ببینید.</p>
+
+        <div class="fields">
+            <div>
+                <label for="paid-at">تاریخ شمسی</label>
+                <div class="date-controls">
+                    <input id="paid-at" type="text" dir="ltr" inputmode="numeric" autocomplete="off"
+                           placeholder="۱۴۰۵/۰۷/۲۸" data-jalali-datepicker data-jalali-alt="#paid-at-iso"
+                           data-jalali-trigger="#calendar-button" data-jalali-clear>
+                    <button id="calendar-button" type="button">باز کردن تقویم</button>
+                </div>
+            </div>
+            <div>
+                <label for="paid-at-iso">معادل میلادی</label>
+                <input id="paid-at-iso" type="text" dir="ltr" readonly value="2026-10-20">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

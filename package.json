@@ -1,0 +1,16 @@
+{
+  "name": "jalali-persian-datepicker",
+  "version": "1.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withoutthefiling/jalali-persian-datepicker.git"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./style.css": "./style.css"
+  },
+  "files": ["index.js", "style.css", "fonts/", "example.html", "README.md"]
+}
